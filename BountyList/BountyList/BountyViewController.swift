@@ -9,8 +9,24 @@ import UIKit
 
 class BountyViewController: UIViewController {
 
-    let nameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
-    let bountyList = [33000000, 50, 44000000, 30000000, 16000000, 80000000, 770000000, 120000000]
+    // MVVM
+    
+    // Model
+    // - BountyInfo
+    // > BountyInfo 만들기
+    
+    // View
+    // - ListCell
+    // > ListCell을 만들기 위해 필요한 정보를 ViewModel한테서 받아야겠다.
+    // > ListCell은 ViewModel로부터 받은 정보로 뷰 업데이트하기
+    
+    // ViewModel
+    // - BountyViewModel
+    // > BountyViewModel을 만들고 뷰레이어에서 필요한 메서드 만들기
+    // > 모델 가지고 있기. ex) BountyInfo 등
+    
+    
+    let viewModel = bountyViewModel()   // MVVM 패턴은 Model에서 정의한 것을 View가 직접 가져갈 수 없기떄문에 중간에 View Model을 생성해줘야 한다
     
     // Segue를 호출하기 직전에 준비해주는 것. DetailViewController에게 데이터를 주는 것
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -18,8 +34,11 @@ class BountyViewController: UIViewController {
             let vc = segue.destination as? DetailViewController
             
             if let index = sender as? Int {  // Any로 받았던 것을 Int로 다운캐스팅
-                vc?.name = nameList[index]
-                vc?.bounty = bountyList[index]
+
+                let bountyInfo = viewModel.bountyInfo(at: index)
+
+                vc?.viewModel.update(model: bountyInfo)
+
             }
         }
     }
@@ -35,7 +54,8 @@ extension BountyViewController: UITableViewDataSource, UITableViewDelegate {
 
     // UITableViewDataSource : 셀 몇개야?, 어떻게 보여줄까?에 대한 대답
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bountyList.count
+//        return bountyInfoList.count
+        return viewModel.numOfBoutnyInfoList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,11 +64,9 @@ extension BountyViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        // indexPath는 [section,row]로 이루어져 있는 행을 식별하는 상대적인 경로
-        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-        cell.imgView.image = img
-        cell.nameLabel.text = nameList[indexPath.row]
-        cell.bountyLabel.text = "\(bountyList[indexPath.row])"
+        let bountyInfo = viewModel.bountyInfo(at: indexPath.row)
+
+        cell.update(info: bountyInfo)
         
         return cell
     }
@@ -66,4 +84,34 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
+    
+    func update(info: BountyInfo) {
+       imgView.image = info.image
+       nameLabel.text = info.name
+       bountyLabel.text = "\(info.bounty)"
+    }
+}
+
+
+//MARK: - ViewModel
+class bountyViewModel {
+    
+    let bountyInfoList: [BountyInfo] = [
+        BountyInfo(name: "brook", bounty: 33000000),
+        BountyInfo(name: "chopper", bounty: 50),
+        BountyInfo(name: "franky", bounty: 44000000),
+        BountyInfo(name: "luffy", bounty: 30000000),
+        BountyInfo(name: "nami", bounty: 16000000),
+        BountyInfo(name: "robin", bounty: 80000000),
+        BountyInfo(name: "sanji", bounty: 770000000),
+        BountyInfo(name: "zoro", bounty: 120000000),
+    ]
+    
+    var numOfBoutnyInfoList: Int {
+        return bountyInfoList.count
+    }
+    
+    func bountyInfo(at index: Int) -> BountyInfo {
+        return bountyInfoList[index]
+    }
 }

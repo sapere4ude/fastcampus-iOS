@@ -14,6 +14,7 @@
 		FAC6EE2A25761A5A0070536B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC6EE2925761A5A0070536B /* Assets.xcassets */; };
 		FAC6EE2D25761A5A0070536B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC6EE2B25761A5A0070536B /* LaunchScreen.storyboard */; };
 		FAC6EE372576287C0070536B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6EE362576287C0070536B /* DetailViewController.swift */; };
+		FAF444EE2577ACFF008A5E68 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF444ED2577ACFF008A5E68 /* BountyInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FAC6EE2C25761A5A0070536B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC6EE2E25761A5A0070536B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC6EE362576287C0070536B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FAF444ED2577ACFF008A5E68 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,12 @@
 				FAC6EE2025761A570070536B /* AppDelegate.swift */,
 				FAC6EE2225761A570070536B /* SceneDelegate.swift */,
 				FAC6EE2425761A570070536B /* BountyViewController.swift */,
+				FAC6EE362576287C0070536B /* DetailViewController.swift */,
+				FAF444ED2577ACFF008A5E68 /* BountyInfo.swift */,
 				FAC6EE2625761A570070536B /* Main.storyboard */,
 				FAC6EE2925761A5A0070536B /* Assets.xcassets */,
 				FAC6EE2B25761A5A0070536B /* LaunchScreen.storyboard */,
 				FAC6EE2E25761A5A0070536B /* Info.plist */,
-				FAC6EE362576287C0070536B /* DetailViewController.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF444EE2577ACFF008A5E68 /* BountyInfo.swift in Sources */,
 				FAC6EE2525761A570070536B /* BountyViewController.swift in Sources */,
 				FAC6EE2125761A570070536B /* AppDelegate.swift in Sources */,
 				FAC6EE2325761A570070536B /* SceneDelegate.swift in Sources */,
