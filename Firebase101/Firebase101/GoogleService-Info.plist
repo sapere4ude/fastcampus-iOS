@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>32067372555-f5g726ucdrs8pmcv37824i7amttqepcg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.32067372555-f5g726ucdrs8pmcv37824i7amttqepcg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAr3Aj3NpERNZ-cWXozryOiq3AiluAIags</string>
+	<key>GCM_SENDER_ID</key>
+	<string>32067372555</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sapere4ude.Firebase101</string>
+	<key>PROJECT_ID</key>
+	<string>fir-101-3907c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-101-3907c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:32067372555:ios:7fe683119a287a3b1ee90e</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-101-3907c-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

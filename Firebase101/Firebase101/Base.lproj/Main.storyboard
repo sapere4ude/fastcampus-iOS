@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Firebase101" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Data!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnl-TV-pZ3">
+                                <rect key="frame" x="134.5" y="107" width="145" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Customers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHB-4x-YJf">
+                                <rect key="frame" x="98" y="246.5" width="218" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21S-A4-3QT">
+                                <rect key="frame" x="151" y="348.5" width="112" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="createCustomer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hbb-xg-sZR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-N8-WkP">
+                                <rect key="frame" x="168" y="418.5" width="78" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="READ">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchCustomer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Yf-0C-Z9H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L3-NN-m6h">
+                                <rect key="frame" x="149.5" y="488.5" width="115" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="UPDATE">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateCustomer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mny-d4-Ql7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI2-dL-RkI">
+                                <rect key="frame" x="152" y="545.5" width="110" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteCustomer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RK4-fV-NfT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rnl-TV-pZ3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="4nw-e1-BYG"/>
+                            <constraint firstItem="ZI2-dL-RkI" firstAttribute="centerX" secondItem="5L3-NN-m6h" secondAttribute="centerX" id="9Pm-CK-CcO"/>
+                            <constraint firstItem="SbU-N8-WkP" firstAttribute="top" secondItem="21S-A4-3QT" secondAttribute="bottom" constant="21" id="Uoe-sv-JxX"/>
+                            <constraint firstItem="5L3-NN-m6h" firstAttribute="centerX" secondItem="SbU-N8-WkP" secondAttribute="centerX" id="buP-8l-Xh7"/>
+                            <constraint firstItem="gHB-4x-YJf" firstAttribute="top" secondItem="rnl-TV-pZ3" secondAttribute="bottom" constant="100" id="fL6-TD-vGg"/>
+                            <constraint firstItem="rnl-TV-pZ3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iec-cf-Bcs"/>
+                            <constraint firstItem="21S-A4-3QT" firstAttribute="top" secondItem="gHB-4x-YJf" secondAttribute="bottom" constant="62.5" id="kaY-qa-Rt3"/>
+                            <constraint firstItem="5L3-NN-m6h" firstAttribute="top" secondItem="SbU-N8-WkP" secondAttribute="bottom" constant="21" id="pss-qH-LZM"/>
+                            <constraint firstItem="SbU-N8-WkP" firstAttribute="centerX" secondItem="21S-A4-3QT" secondAttribute="centerX" id="vmp-iS-EFy"/>
+                            <constraint firstItem="gHB-4x-YJf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wuB-OR-ozz"/>
+                            <constraint firstItem="21S-A4-3QT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xTK-9g-Hg5"/>
+                            <constraint firstItem="ZI2-dL-RkI" firstAttribute="top" secondItem="5L3-NN-m6h" secondAttribute="bottom" constant="8" symbolic="YES" id="yZg-fr-vYw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="rnl-TV-pZ3" id="zyH-q8-Oq6"/>
+                        <outlet property="numberOfCustomers" destination="gHB-4x-YJf" id="DLv-Mr-PLZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="64.955357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
