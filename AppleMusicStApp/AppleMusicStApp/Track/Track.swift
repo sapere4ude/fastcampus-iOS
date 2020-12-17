@@ -13,6 +13,7 @@ struct Track {
     let albumName: String
     let artwork: UIImage
     
+    // 저장 프로퍼티들은 반드시 이와같이 이니셜라이저를 사용해서 초기화해줘야 한다.
     init(title: String, artist: String, albumName: String, artwork: UIImage) {
         self.title = title
         self.artist = artist
