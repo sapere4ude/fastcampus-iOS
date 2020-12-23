@@ -62,3 +62,4 @@ class SimplePlayer {
         player.addPeriodicTimeObserver(forInterval: forInterval, queue: queue, using: using)
     }
 }
+

@@ -32,6 +32,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KEE-mY-gdE">
                                 <rect key="frame" x="18" y="628" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="mND-BP-7fP" eventType="editingDidBegin" id="FY6-5X-bBe"/>
+                                    <action selector="endDrag:" destination="mND-BP-7fP" eventType="editingDidEnd" id="ekg-wv-Bkd"/>
+                                    <action selector="seek:" destination="mND-BP-7fP" eventType="valueChanged" id="UBd-iK-QJo"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clT-5L-k5i">
                                 <rect key="frame" x="20" y="668" width="39" height="17"/>
@@ -54,9 +59,12 @@
                                 <state key="normal" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
+                                <connections>
+                                    <action selector="togglePlayButton:" destination="mND-BP-7fP" eventType="touchUpInside" id="8Ba-uL-jHE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZICO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM9-pl-x00">
-                                <rect key="frame" x="184" y="510" width="46" height="24"/>
+                                <rect key="frame" x="184" y="495" width="46" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +86,7 @@
                             <constraint firstItem="i3I-GI-FJA" firstAttribute="top" secondItem="99H-cF-MlY" secondAttribute="top" constant="28" id="jS3-fh-WZb"/>
                             <constraint firstItem="CDs-SK-zZ5" firstAttribute="top" secondItem="KEE-mY-gdE" secondAttribute="bottom" constant="60" id="nwF-Xk-Dki"/>
                             <constraint firstItem="KEE-mY-gdE" firstAttribute="leading" secondItem="99H-cF-MlY" secondAttribute="leading" constant="20" id="qqV-Hm-SqR"/>
-                            <constraint firstItem="LM9-pl-x00" firstAttribute="top" secondItem="1Bp-gX-lJg" secondAttribute="bottom" constant="30" id="tfA-xX-WZu"/>
+                            <constraint firstItem="LM9-pl-x00" firstAttribute="top" secondItem="1Bp-gX-lJg" secondAttribute="bottom" constant="15" id="tfA-xX-WZu"/>
                             <constraint firstItem="99H-cF-MlY" firstAttribute="trailing" secondItem="KEE-mY-gdE" secondAttribute="trailing" constant="20" id="zLM-E6-x9Y"/>
                         </constraints>
                     </view>
