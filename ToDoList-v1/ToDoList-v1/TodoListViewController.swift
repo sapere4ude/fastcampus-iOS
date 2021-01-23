@@ -166,6 +166,7 @@ class TodoListCell: UICollectionViewCell {
     
     @IBOutlet weak var strikeThroughWidth: NSLayoutConstraint!
     
+    // Line170,171 : List Cell에 있는 메서드라는걸 인지하기. View 객체가 model이나 다른 비즈니스 로직을 건들지 못하게 하기 위해서 이런식의 클로저 형태로 만들어준뒤 나중에 필요할 경우 이 코드를 통해 불러온다.
     var doneButtonTapHandler: ((Bool) -> Void)?
     var deleteButtonTapHandler: (() -> Void)?
     
@@ -184,7 +185,7 @@ class TodoListCell: UICollectionViewCell {
         checkButton.isSelected = todo.isDone
         descriptionLabel.text = todo.detail
         descriptionLabel.alpha = todo.isDone ? 0.2 : 1  // 글자의 투명도
-        deleteButton.isHidden = todo.isDone == false
+        deleteButton.isHidden = todo.isDone == false    // 삭제 버튼을 숨기는 것은? isDone이 아닐때
         showStrikeThrough(todo.isDone)  // 밑줄 쫙 기능
     }
     
@@ -204,14 +205,14 @@ class TodoListCell: UICollectionViewCell {
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
-        // [x] TODO: checkButton 처리
+        // [x] TODO: checkButton 처리 (Line208~214 : View를 업데이트하기 위함)
         checkButton.isSelected = !checkButton.isSelected
         let isDone = checkButton.isSelected
         showStrikeThrough(isDone)
         descriptionLabel.alpha = isDone ? 0.2 : 1
         deleteButton.isHidden = !isDone
         
-        doneButtonTapHandler?(isDone)   //  isDone을 클로저로 받고 이후에 Todo 객체를 업데이트를 할지말지 결정 (데이터를 업데이트 시키기 위한 클로저)
+        doneButtonTapHandler?(isDone)   //  isDone을 클로저로 받고 이후에 Todo 객체를 업데이트를 할지말지 결정 (데이터를 업데이트 시키기 위한 클로저) <- 이해 안됨...
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {

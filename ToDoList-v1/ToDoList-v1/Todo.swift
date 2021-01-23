@@ -21,7 +21,7 @@ struct Todo: Codable, Equatable {
         self.isToday = isToday
     }
     
-    // 동등비교를 위해 Equatable를 채택. Todo 객체들끼리의 비교를 위해 필요한 것
+    // 동등비교를 위해 Equatable를 채택. Todo 객체들끼리의 비교를 위해 필요한 것 <- 솔직히 왜 사용하는건지는 모르겠음
     static func == (lhs: Self, rhs: Self) -> Bool {
         // [x]TODO: 동등 조건 추가
         return lhs.id == rhs.id
@@ -38,6 +38,8 @@ class TodoManager {
     
     var todos: [Todo] = []
     
+    // createTodo 메서드는 TodoListViewController의 Line55에게 도움을 준다
+    // 메서드의 반환 형태 + return 형식 확인하기. 다시한번 위에서 정의했던 struct 모습을 가질 수 있게 도와준다.
     func createTodo(detail: String, isToday: Bool) -> Todo {
         // [x] TODO: create로직 추가
         let nextId = TodoManager.lastId + 1
@@ -51,11 +53,12 @@ class TodoManager {
         saveTodo()
     }
     
-    // 나중에 이 부분 다시 확인할 것
+    // filter라는게 조건이 true이면 값 포함, false이면 값 배제인데 한번에 와닿지않는 코드...
     func deleteTodo(_ todo: Todo) {
         // [x] TODO: delete 로직 추가
+        print("todos--->\(todos)")
         todos = todos.filter { $0.id != todo.id }   // todos 필터링해서 첫번째 인덱스가 $0에 들어가고 그것이 todo의 id와 같지 않은 것을 반환
-        
+        print("todo result--->\(todos)")
 //        todos = todos.filter { existingTodo in
 //            return existingTodo.id != todo.id
 //        }
