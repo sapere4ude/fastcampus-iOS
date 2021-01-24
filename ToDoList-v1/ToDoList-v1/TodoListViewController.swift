@@ -23,7 +23,7 @@ class TodoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // [x] TODO: 키보드 디텍션
+        // [x] TODO: 키보드 디텍션 (옵져버 디텍션)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -61,14 +61,14 @@ class TodoListViewController: UIViewController {
     
     // [x] TODO: BG 탭했을때, 키보드 내려오게 하기
     @IBAction func tapBG(_ sender: Any) {
-        inputTextField.resignFirstResponder()
+        inputTextField.resignFirstResponder()   // 텍스트필드에 초점있던 것을 해제하는것
     }
 }
 
 extension TodoListViewController {
     @objc private func adjustInputView(noti: Notification) {
         guard let userInfo = noti.userInfo else { return }
-        // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+        // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경. Frame -> 위치와 사이즈까지 같이 알고있는것
         guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
         if noti.name == UIResponder.keyboardWillShowNotification {
