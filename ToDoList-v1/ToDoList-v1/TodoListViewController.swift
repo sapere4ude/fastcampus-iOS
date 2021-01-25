@@ -166,7 +166,7 @@ class TodoListCell: UICollectionViewCell {
     
     @IBOutlet weak var strikeThroughWidth: NSLayoutConstraint!
     
-    // Line170,171 : List Cell에 있는 메서드라는걸 인지하기. View 객체가 model이나 다른 비즈니스 로직을 건들지 못하게 하기 위해서 이런식의 클로저 형태로 만들어준뒤 나중에 필요할 경우 이 코드를 통해 불러온다.
+    // Line170,171 : List Cell에 있는 메서드라는걸 인지하기. View 객체가 model이나 다른 비즈니스 로직을 건들지 못하게 하기 위해서 이런식의 클로저 형태로 만들어준뒤 나중에 필요할 경우 이 코드를 통해 불러온다. <- 이 부분이 이해가 안됨...
     var doneButtonTapHandler: ((Bool) -> Void)?
     var deleteButtonTapHandler: (() -> Void)?
     
